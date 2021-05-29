@@ -11,6 +11,21 @@ namespace MvcMovie.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("")]
+    [Route("Home")]
+    [Route("Home/Index")]
+    [Route("Home/Index/{id?}")]
+    public IActionResult Index(int? id)
+    {
+        return ControllerContext.MyDisplayRouteInfo(id);
+    }
+
+    [Route("Home/About")]
+    [Route("Home/About/{id?}")]
+    public IActionResult About(int? id)
+    {
+        return ControllerContext.MyDisplayRouteInfo(id);
+    }
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
